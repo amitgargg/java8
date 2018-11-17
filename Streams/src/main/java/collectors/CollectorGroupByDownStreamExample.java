@@ -15,9 +15,11 @@ public class CollectorGroupByDownStreamExample {
 		List<Person> persons = getPersons();
 
 		Function<Person, Integer> collectFunction = (person) -> person.getAge();
+		
+		Collector<Person, ?, Long> countingCollector = Collectors.counting();
 
 		Collector<Person, ?, Map<Integer, Long>> collector = 
-				Collectors.groupingBy(collectFunction, Collectors.counting());
+				Collectors.groupingBy(collectFunction, countingCollector);
 
 		Map<Integer, Long> personmap = persons.stream().collect(collector);
 
