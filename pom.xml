@@ -28,5 +28,6 @@
 		<module>Lambda</module>
     <module>Streams</module>
     <module>DateAndTime</module>
+    <module>StringAndInputOutput</module>
   </modules>
 </project>
